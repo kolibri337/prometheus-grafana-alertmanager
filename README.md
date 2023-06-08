@@ -57,4 +57,7 @@
 1. [Дефолтная конфигурация prometheus](https://prometheus.io/docs/prometheus/latest/getting_started/#configuring-prometheus-to-monitor-itself)
 2. [Prometheus на docker hub](https://hub.docker.com/layers/prom/prometheus/v2.43.0/images/sha256-df60172c8d9f08cadae1d79bf86525b6426c47873c712ddf0a04ed424a8c1ad4?context=explore)
 3. [Grafana на docker hub](https://hub.docker.com/layers/grafana/grafana/9.5.1/images/sha256-5056e8264a8420f23838fb23c77a7bce9370161d5d90adeff47dde03b80c2e14?context=explore)
-3. [Alertmanager на docker hub](https://hub.docker.com/layers/prom/alertmanager/v0.25.0/images/sha256-db8303fa05341f5dc6b19b36a97325cd1b8307254ed9042a2c554af71f3c0284?context=explore)
+4. [Alertmanager на docker hub](https://hub.docker.com/layers/prom/alertmanager/v0.25.0/images/sha256-db8303fa05341f5dc6b19b36a97325cd1b8307254ed9042a2c554af71f3c0284?context=explore)
+5. [Alertmanager configuration example](https://docs.google.com/document/d/1wBjEFGYdwasIyh-kjKtiJ3ElDjL5GMiGx2bV48L-VsY/edit?usp=sharing)
+6. [Receiver configuration](https://prometheus.io/docs/alerting/latest/configuration/#receiver)
+7. [Telegram configuration](https://prometheus.io/docs/alerting/latest/configuration/#telegram_config)
