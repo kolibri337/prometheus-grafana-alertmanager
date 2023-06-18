@@ -61,3 +61,5 @@
 5. [Alertmanager configuration example](https://docs.google.com/document/d/1wBjEFGYdwasIyh-kjKtiJ3ElDjL5GMiGx2bV48L-VsY/edit?usp=sharing)
 6. [Receiver configuration](https://prometheus.io/docs/alerting/latest/configuration/#receiver)
 7. [Telegram configuration](https://prometheus.io/docs/alerting/latest/configuration/#telegram_config)
+8. [Promethues test example](https://prometheus.io/docs/prometheus/latest/configuration/unit_testing_rules/#example)
+9. Команда для установки promtool - `(cd /tmp/ && curl -L https://github.com/prometheus/prometheus/releases/download/v2.45.0-rc.0/prometheus-2.45.0-rc.0.linux-amd64.tar.gz | tar -xz && sudo mv /tmp/prometheus-2.45.0-rc.0.linux-amd64/promtool /usr/local/bin/ && rm -rf /tmp/prometheus-2.45.0-rc.0.linux-amd64)`
