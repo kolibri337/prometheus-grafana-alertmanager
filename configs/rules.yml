@@ -2,5 +2,24 @@ groups:
   - name: app
     rules:
     - record: app:latency:99q:by_pattern
-      expr: histogram_quantile(0.99, sum(rate(http_request_duration_seconds_historgram_bucket[1m])) by (pattern, le))
- 
+      expr: histogram_quantile(0.99, sum(rate(http_request_duration_seconds_histogram_bucket[1m])) by (pattern, le))
+      labels:
+        service: app
+
+    # RPS по кодам ответов
+    - record: app:rps:by_status
+      expr: rate(http_requests_total[1m])
+      labels:
+        service: app
+
+    # RPS для кодов ответа 5xx
+    - record: app:rps:5xx
+      expr: rate(http_requests_total{status=~"5.."}[1m])
+      labels:
+        service: app
+
+    # 99-й перцентиль latency для эндпойнтов с префиксом /ms
+    - record: app:latency:99q:by_ms_pattern
+      expr: histogram_quantile(0.99, sum(rate(http_request_duration_seconds_bucket{pattern=~"/ms-.*"}[1m])) by (le, pattern))
+      labels:
+        service: app
