@@ -1,0 +1,6 @@
+groups:
+  - name: app
+    rules:
+    - record: app:latency:99q:by_pattern
+      expr: histogram_quantile(0.99, sum(rate(http_request_duration_seconds_historgram_bucket[1m])) by (pattern, le))
+ 
