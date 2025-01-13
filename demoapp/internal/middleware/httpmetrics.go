@@ -21,6 +21,14 @@ func HTTPMetrics(next http.Handler) http.Handler {
 		method := chi.RouteContext(r.Context()).RouteMethod
 		status := srw.GetStatusString()
 
+		if status == "400" {
+			metrics.HttpBadRequestsTotal.WithLabelValues(pattern, method, status).Inc()
+		}
+
+		if status == "500" {
+			metrics.HttpErrorRequestsTotal.WithLabelValues(pattern, method, status).Inc()
+		}
+		
 		metrics.HttpRequestsTotal.WithLabelValues(pattern, method, status).Inc()
 		metrics.HttpRequestsDurationHistorgram.WithLabelValues(pattern, method).Observe(elapsedSeocnds)
 		metrics.HttpRequestsDurationSummary.WithLabelValues(pattern, method).Observe(elapsedSeocnds)

@@ -52,4 +52,18 @@ var (
 		},
 		[]string{"pattern", "method"},
 	)
+
+	HttpBadRequestsTotal = promauto.NewCounterVec(
+		prometheus.CounterOpts{
+			Name: "http_bad_requests_total",
+		},
+		[]string{"pattern", "method", "status"},
+	)
+
+	HttpErrorRequestsTotal = promauto.NewCounterVec(
+		prometheus.CounterOpts{
+			Name: "http_error_requests_total",
+		},
+		[]string{"pattern", "method", "status"},
+	)
 )
