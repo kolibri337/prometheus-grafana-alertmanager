@@ -36,3 +36,4 @@ alerting:
 
 rule_files:
   - ./rules.yml
+  - ./alertrules.yml

@@ -1,0 +1,8 @@
+groups:
+- name: basic
+  rules:
+  - alert: "ApplicationIsDown"
+    expr: up{job="app"}==0
+    for: 30s
+    labels:
+      app: app
