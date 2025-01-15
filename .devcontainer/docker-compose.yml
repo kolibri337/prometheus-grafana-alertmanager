@@ -36,9 +36,11 @@ services:
       - 9093:9093
     networks:
       - local
+    volumes:
+      - ../configs/alertmanager.yml:/etc/alertmanager/alertmanager.yml
 
   cadvisor:
-    image: gcr.io/cadvisor/cadvisor:latest
+    image: gcr.io/cadvisor/cadvisor:v0.47.0
     container_name: cadvisor
     ports:
     - 8083:8080

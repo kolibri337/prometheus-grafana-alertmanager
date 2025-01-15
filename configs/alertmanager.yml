@@ -1,0 +1,13 @@
+receivers:
+  - name: default
+  - telegram:
+    telegram_configs: 
+      - bot_token: #Enter your telegram bot api token
+      - chat_id: #Enter yout telegram id
+
+route:
+  receiver: default
+  routes:
+  - receivers: telegram
+    matchers:
+    - app="app"
